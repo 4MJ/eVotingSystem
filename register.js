@@ -1,3 +1,18 @@
+var voterData = require("./voter");
+var logData = require ('.readlog');
+var buffer = new Buffer.alloc();
+var bufferText = "";
+var text="";
+var voter="";
+setTimeout(()=>{
+    if(typeof(logData.data)!=undefined){
+        bufferText = `<textarea class="form-control" row="10" value="">${ buffer.write(logData.data)}</textarea>`;
+        text = ` <textarea class="form-control" row="10" value="">${logData.data}</textarea>`;
+    }
+    if(typeof(voterData.data) != undefined){
+        voter=voterData.data
+    }
+}, 500)
 exports.registration = ()=>{
     return `<!DOCTYPE html>
     <html lang="en">
@@ -59,8 +74,17 @@ exports.registration = ()=>{
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
+</form> 
+                
+        <div class="col-md-3">
+            <h1>Students</h1>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group">${students}</ul>
+                </div>
             </div>
+        </div>
+    </div>
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
